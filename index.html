@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Infernos Battle</title>
+
+    
+</head>
+<body>
+    <section id="seleccionar-personaje">
+        <div class="header">
+            <h1 class="titulo">Infernos Battle</h1>
+
+            <h2 class="subtitulo">Elige tu personaje: </h2>
+        </div>
+
+        <article>
+            <div>
+                <input type="radio" name="personaje" id="guerrero" class="input-personaje">
+                <label for="guerrero" class="label-personaje"><img src="./img/warrior.png" alt="guerrero"> Guerrero </label>
+            </div>
+            <div>
+                <p><strong>Vida: </strong> <span id="vida-guerrero">10</span></p>
+                <p><strong>Ataque: </strong> <span id="ataque-guerrero">10</span></p>
+                <p><strong>Mana: </strong> <span id="mana-guerrero">10</span></p>
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <input type="radio" name="personaje" id="mago" class="input-personaje">
+                <label for="mago" class="label-personaje"> <img src="./img/wizard.png" alt="mago"> Mago </label>               
+            </div>
+            <div>
+                <p><strong>Vida: </strong> <span id="vida-mago">10</span></p>
+                <p><strong>Ataque: </strong> <span id="ataque-mago">10</span></p>
+                <p><strong>Mana: </strong> <span id="mana-mago">10</span></p>
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <input type="radio" name="personaje" id="asesino" class="input-personaje">
+                <label for="asesino" class="label-personaje"> <img src="./img/assassin.png" alt="asesino"> Asesino </label>
+            </div>
+            <div>
+                <p><strong>Vida: </strong> <span id="vida-asesino">10</span></p>
+                <p><strong>Ataque: </strong> <span id="ataque-asesino">10</span></p>
+                <p><strong>Mana: </strong> <span id="mana-asesino">10</span></p>
+            </div>           
+        </article>
+        
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+
+
+    <section id="seleccionar-ataque">
+        <div class="header">
+            <h1 class="titulo">Infernos Battle</h1>
+        </div>
+        <div id="mensaje-resultado">
+
+        </div>
+        <article class="carta">
+                <h2 class="subtitulo">Tu personaje: <span id="personaje-jugador">Guerrero</span></h2>
+                <div>
+                    <div id="img-jugador">
+
+                    </div>
+                    <div>
+                        <p><strong>Vida: </strong> <span id="vida-jugador"></span></p>
+                        <p><strong>Ataque: </strong> <span id="ataque-jugador"></span></p>
+                        <p><strong>Mana: </strong> <span id="mana-jugador"></span></p>
+                    </div>
+                    <div class="panel-ataque">
+                        <div class="card-ataque">
+                            <h3>Sword Slash: </h3>
+                            <ul class="ataque-list">
+                                <li class="ataque-item">Tipo de ataque: Cuerpo a Cuerpo</li>
+                                <li class="ataque-item">Daño: <span id="danio-ataque-cac">10</span></li>
+                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-cac">10</span></li>
+                            </ul>
+                            <button id="ataque-cuerpo">Blandire mi espada</button>
+                        </div>
+                        <div class="card-ataque">
+                            <h3>Fires Balls: </h3>
+                            <ul class="ataque-list">
+                                <li class="ataque-item">Tipo de ataque: Hechizo</li>
+                                <li class="ataque-item">Daño: <span id="danio-ataque-h">10</span></li>
+                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-h">10</span></li>
+                            </ul>
+                            <button id="ataque-hechizo">Los espiritus me acompañan</button>
+                        </div>
+                        <div class="card-ataque">
+                            <h3>Assassins Daggers: </h3>
+                            <ul class="ataque-list">
+                                <li class="ataque-item">Tipo de ataque: Sigilo</li>
+                                <li class="ataque-item">Daño: <span id="danio-ataque-da">10</span></li>
+                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-da">10</span></li>
+                            </ul>
+                            <button id="ataque-dagas">Desde las sombras</button>
+                        </div>
+                        
+                    </div>
+                </div>
+        </article>
+
+        <article class="versus">
+            <p>VS</p>
+        </article>
+
+        <article class="carta">
+                <h2 class="subtitulo">El personaje enemigo: <span id="personaje-enemigo">Guerrero</span></h2>
+                <div>
+                    <div id="img-enemigo">
+
+                    </div>
+                    <div>
+                        <p><strong>Vida: </strong> <span id="vida-enemigo">10</span></p>
+                        <p><strong>Ataque: </strong> <span id="ataque-enemigo">10</span></p>
+                        <p><strong>Mana: </strong> <span id="mana-enemigo">10</span></p>
+                    </div>
+                </div>
+        </article>
+    </section>
+    
+    <section id="resultado">
+        <article class="article1-resultado">
+            <h2 class="subtitulo">Tu personaje: <span id="personaje-resultado">Guerrero</span> ha <span id="resultado-span"></span></h2>
+                <div>
+                    <div id="img-resultado">
+
+                    </div>
+                    <div id="mensaje-resultado">
+
+                    </div>
+        </article>
+        <article class="article2-resultado">
+            <button id="boton-reiniciar">Reiniciar</button>
+        </article>
+    </section>
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
