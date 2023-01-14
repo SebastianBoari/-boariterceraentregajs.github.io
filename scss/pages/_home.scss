@@ -1,0 +1,59 @@
+// WELCOME SECTION
+#welcome{
+    // BACKGROUND 
+    background-image: url(../img/backgrounds/welcome-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // SIZING, P & M
+    height: 100vh;
+    width: 100vw;
+    // LAYOUT
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto auto;
+    .welcome__container{
+        // LAYOUT
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        justify-self: center;  
+        align-self: center;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 6.4rem;
+        .header__title{            
+            // COMMON STYLES
+            font-weight: 400;
+            font-size: $title-xl;
+            font-family: 'UnifrakturMaguntia';
+            color: $yellow;    
+        }
+        .welcome__favCharacter{
+            background-color: $panels;
+            // SIZING, P & M
+            height: 16rem;
+            width: 19rem;
+        }
+        #welcome__btn{
+            // COMMON STYLES
+            color: $yellow;
+            font-family: 'Cormorant Garamond';
+            font-style: Italic;
+            font-size: $title-m;
+            border: none;
+            line-height: 1;
+            background-color: $panels;
+            transition: all .3s;
+            // SIZING, P & M
+            width: 19rem;
+            height: 4rem;
+        }
+        #welcome__btn:hover{
+            background-color: $alertPanel;
+        }
+    }
+}
+    
+// SELECT CHARACTER SECTION

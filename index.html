@@ -5,146 +5,161 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Infernos Battle</title>
-
-    
+    <title>Bloodfire</title>
 </head>
 <body>
-    <section id="seleccionar-personaje">
-        <div class="header">
-            <h1 class="titulo">Infernos Battle</h1>
 
-            <h2 class="subtitulo">Elige tu personaje: </h2>
+
+
+    <section id="welcome">
+        <div class=" welcome__container">
+            <h2 class="header__title">Bloodfire</h2>
+            
+            <article class="welcome__favCharacter" id="favCharacter__container">
+                <h4 id="favCharacter__title"></h4>
+                <img id="favCharacter__img" src="" alt="">
+                <p id="favCharacter__name"></p>
+            </article>
+         
+            <button id="welcome__btn">Jugar</button>
         </div>
+    </section>
 
-        <article>
-            <div>
-                <input type="radio" name="personaje" id="guerrero" class="input-personaje">
-                <label for="guerrero" class="label-personaje"><img src="./img/warrior.png" alt="guerrero"> Guerrero </label>
-            </div>
-            <div>
-                <p><strong>Vida: </strong> <span id="vida-guerrero">10</span></p>
-                <p><strong>Ataque: </strong> <span id="ataque-guerrero">10</span></p>
-                <p><strong>Mana: </strong> <span id="mana-guerrero">10</span></p>
-            </div>
-        </article>
 
-        <article>
-            <div>
-                <input type="radio" name="personaje" id="mago" class="input-personaje">
-                <label for="mago" class="label-personaje"> <img src="./img/wizard.png" alt="mago"> Mago </label>               
-            </div>
-            <div>
-                <p><strong>Vida: </strong> <span id="vida-mago">10</span></p>
-                <p><strong>Ataque: </strong> <span id="ataque-mago">10</span></p>
-                <p><strong>Mana: </strong> <span id="mana-mago">10</span></p>
-            </div>
-        </article>
 
-        <article>
-            <div>
-                <input type="radio" name="personaje" id="asesino" class="input-personaje">
-                <label for="asesino" class="label-personaje"> <img src="./img/assassin.png" alt="asesino"> Asesino </label>
-            </div>
-            <div>
-                <p><strong>Vida: </strong> <span id="vida-asesino">10</span></p>
-                <p><strong>Ataque: </strong> <span id="ataque-asesino">10</span></p>
-                <p><strong>Mana: </strong> <span id="mana-asesino">10</span></p>
-            </div>           
+
+
+
+    <section id="selectCharacter">
+        <article class="selectCharacter__header">
+            <h2 class="header__title">Bloodfire</h2>
+            <button class="header__btn" id="selectCharacter__header--btn">Seleccionar</button>
         </article>
         
-        <button id="boton-personaje">Seleccionar</button>
+        <article class="selectCharacter__character">
+            <div class="character__img">
+                <img src="" alt="Imagen de un personaje demoniaco al mejor estilo Pixel Art.">
+            </div>
+            <div class="character__info">
+                <h3 class="characterInfo__name">Baphomet</h3>
+                <div class="characterInfo__stats">
+                    <table class="stats__table">
+                        <tr class="table__row">
+                            <td class="row__data">Vida:</td>
+                            <td class="row__data">28000</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="row__data">Ataque:</td>
+                            <td class="row__data">28000</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="row__data">Mana:</td>
+                            <td class="row__data">28000</td>
+                        </tr>
+                        </table>                           
+                </div>
+            </div>
+        </article>
     </section>
 
+    <section id="battle">
+        <article class="battle__header">
+            <h2 class="header__title">Bloodfire</h2>
+            <div class="header__alert">
+                <p id="alert__txt">Gana el mejor de tres rondas</p>
+            </div>
+        </article>
 
-    <section id="seleccionar-ataque">
-        <div class="header">
-            <h1 class="titulo">Infernos Battle</h1>
-        </div>
-        <div id="mensaje-resultado">
+        <section class="battle__characters">
 
-        </div>
-        <article class="carta">
-                <h2 class="subtitulo">Tu personaje: <span id="personaje-jugador">Guerrero</span></h2>
-                <div>
-                    <div id="img-jugador">
-
-                    </div>
-                    <div>
-                        <p><strong>Vida: </strong> <span id="vida-jugador"></span></p>
-                        <p><strong>Ataque: </strong> <span id="ataque-jugador"></span></p>
-                        <p><strong>Mana: </strong> <span id="mana-jugador"></span></p>
-                    </div>
-                    <div class="panel-ataque">
-                        <div class="card-ataque">
-                            <h3>Sword Slash: </h3>
-                            <ul class="ataque-list">
-                                <li class="ataque-item">Tipo de ataque: Cuerpo a Cuerpo</li>
-                                <li class="ataque-item">Daño: <span id="danio-ataque-cac">10</span></li>
-                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-cac">10</span></li>
-                            </ul>
-                            <button id="ataque-cuerpo">Blandire mi espada</button>
-                        </div>
-                        <div class="card-ataque">
-                            <h3>Fires Balls: </h3>
-                            <ul class="ataque-list">
-                                <li class="ataque-item">Tipo de ataque: Hechizo</li>
-                                <li class="ataque-item">Daño: <span id="danio-ataque-h">10</span></li>
-                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-h">10</span></li>
-                            </ul>
-                            <button id="ataque-hechizo">Los espiritus me acompañan</button>
-                        </div>
-                        <div class="card-ataque">
-                            <h3>Assassins Daggers: </h3>
-                            <ul class="ataque-list">
-                                <li class="ataque-item">Tipo de ataque: Sigilo</li>
-                                <li class="ataque-item">Daño: <span id="danio-ataque-da">10</span></li>
-                                <li class="ataque-item">Mana necesario: <span id="mana-ataque-da">10</span></li>
-                            </ul>
-                            <button id="ataque-dagas">Desde las sombras</button>
-                        </div>
-                        
+            <article class="characters__player">
+                <div class="player__img">
+                    <img src="./img/assassin.png" alt="Imagen de un personaje demoniaco al mejor estilo Pixel Art.">
+                </div>
+                <div class="player__info">
+                    <h3 class="player__name">Baphomet</h3>
+                    <div class="player__stats">
+                        <table class="stats__table">
+                            <tr class="table__row">
+                                <td class="row__data">Vida:</td>
+                                <td class="row__data" id="player__life">28000</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="row__data">Ataque:</td>
+                                <td class="row__data" id="player__attack">28000</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="row__data">Mana:</td>
+                                <td class="row__data" id="player__mana">28000</td>
+                            </tr>
+                            </table>                           
                     </div>
                 </div>
-        </article>
+            </article>
 
-        <article class="versus">
-            <p>VS</p>
-        </article>
-
-        <article class="carta">
-                <h2 class="subtitulo">El personaje enemigo: <span id="personaje-enemigo">Guerrero</span></h2>
-                <div>
-                    <div id="img-enemigo">
-
-                    </div>
-                    <div>
-                        <p><strong>Vida: </strong> <span id="vida-enemigo">10</span></p>
-                        <p><strong>Ataque: </strong> <span id="ataque-enemigo">10</span></p>
-                        <p><strong>Mana: </strong> <span id="mana-enemigo">10</span></p>
+            <article class="characters__npc">
+                <div class="npc__img">
+                    <img src="./img/assassin.png" alt="Imagen de un personaje demoniaco al mejor estilo Pixel Art.">
+                </div>
+                <div class="npc__info">
+                    <h3 class="npc__name">Baphomet</h3>
+                    <div class="npc__stats">
+                        <table class="stats__table">
+                            <tr class="table__row">
+                                <td class="row__data">Vida:</td>
+                                <td class="row__data" id="npc__life">28000</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="row__data">Ataque:</td>
+                                <td class="row__data" id="npc__attack">28000</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="row__data">Mana:</td>
+                                <td class="row__data" id="npc__mana">28000</td>
+                            </tr>
+                            </table>                           
                     </div>
                 </div>
+            </article>
+        </section>
+
+        <article class="battle__attack">
+            <div class="attack">
+                <h3 class="attack__name">Sword Slash</h3>
+                <p class="attack__info">Tipo de ataque: Cuerpo a Cuerpo directo</p>
+                <p class="attack__info">Daño: <span id="attack__info--damage"></span></p>
+                <p class="attack__info">Mana requerido: <span id="attack__info--manaRquired"></span></p>
+            </div>
+            <div class="attack">
+                <h3 class="attack__name">Fire Balls</h3>
+                <p class="attack__info">Tipo de ataque: Hechizo, ataque a distancia</p>
+                <p class="attack__info">Daño: <span id="attack__info--damage"></span></p>
+                <p class="attack__info">Mana requerido: <span id="attack__info--manaRquired"></span></p>
+            </div>
+            <div class="attack">
+                <h3 class="attack__name">Assassins Daggers</h3>
+                <p class="attack__info">Tipo de ataque: Trampa, truco y sigiloso</p>
+                <p class="attack__info">Daño: <span id="attack__info--damage"></span></p>
+                <p class="attack__info">Mana requerido: <span id="attack__info--manaRquired"></span></p>
+            </div>
         </article>
     </section>
-    
-    <section id="resultado">
-        <article class="article1-resultado">
-            <h2 class="subtitulo">Tu personaje: <span id="personaje-resultado">Guerrero</span> ha <span id="resultado-span"></span></h2>
-                <div>
-                    <div id="img-resultado">
 
-                    </div>
-                    <div id="mensaje-resultado">
+    <section id="endgame">
+        <div class="endgame__header">
+            <h2 class="header__title"></h2>
+        </div>
+        
+        <article class="endgame__panel">
+            <div class="panel__header">
+                <h3 class="header__title" id="endgame__outcome"></h3>
+            </div>
+            <p class="panel__txt" id="endgame__outcome--txt"></p>  
+        </article>
 
-                    </div>
-        </article>
-        <article class="article2-resultado">
-            <button id="boton-reiniciar">Reiniciar</button>
-        </article>
+        <button id="endgame__restartBtn">Volver a jugar</button>
     </section>
 
-
-
-    <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
