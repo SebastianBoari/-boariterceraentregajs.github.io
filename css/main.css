@@ -7,6 +7,9 @@
 html {
   font-size: 62.5%; }
 
+body {
+  overflow-x: hidden; }
+
 /* VARIABLES */
 /* Colors */
 /* Font Sizes */
@@ -25,6 +28,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   display: grid;
@@ -39,25 +43,158 @@ html {
     flex-flow: column nowrap;
     align-items: center;
     gap: 6.4rem; }
-    #welcome .welcome__container .header__title {
+    #welcome .welcome__container .welcome__title {
       font-weight: 400;
       font-size: 9.6em;
       font-family: 'UnifrakturMaguntia';
       color: #f6aa1c; }
     #welcome .welcome__container .welcome__favCharacter {
-      background-color: rgba(222, 226, 230, 0.25);
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(222, 226, 230, 0.5);
       height: 16rem;
-      width: 19rem; }
+      width: 19rem;
+      padding: 0.8rem; }
+      #welcome .welcome__container .welcome__favCharacter #favCharacter__title {
+        font-family: 'Cormorant Garamond';
+        font-style: Italic;
+        font-weight: bolder;
+        font-size: 1.8em;
+        color: #7b0d1e;
+        text-align: center; }
+      #welcome .welcome__container .welcome__favCharacter img {
+        width: 8.4rem; }
+      #welcome .welcome__container .welcome__favCharacter #favCharacter__name {
+        font-family: 'Cormorant Garamond';
+        font-weight: bolder;
+        font-size: 2em;
+        color: #7b0d1e;
+        text-align: center; }
     #welcome .welcome__container #welcome__btn {
-      color: #f6aa1c;
+      color: #7b0d1e;
       font-family: 'Cormorant Garamond';
       font-style: Italic;
+      font-weight: bold;
       font-size: 3.2em;
       border: none;
       line-height: 1;
-      background-color: rgba(222, 226, 230, 0.25);
+      background-color: rgba(222, 226, 230, 0.5);
       transition: all .3s;
       width: 19rem;
       height: 4rem; }
     #welcome .welcome__container #welcome__btn:hover {
-      background-color: rgba(222, 226, 230, 0.5); }
+      background-color: #ced4da; }
+
+#selectCharacter {
+  background-image: url(../img/backgrounds/select-character-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto;
+  padding: 6.4rem; }
+  #selectCharacter .selectCharacter__container {
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 6.4rem; }
+    #selectCharacter .selectCharacter__container .selectCharacter__header {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6.4rem; }
+      #selectCharacter .selectCharacter__container .selectCharacter__header .header__title {
+        font-weight: 400;
+        font-size: 9.6em;
+        font-family: 'UnifrakturMaguntia';
+        color: #f6aa1c; }
+      #selectCharacter .selectCharacter__container .selectCharacter__header .header__btn {
+        color: #f6aa1c;
+        font-family: 'Cormorant Garamond';
+        font-style: Italic;
+        font-weight: bold;
+        font-size: 3.2em;
+        border: none;
+        line-height: 1;
+        background-color: rgba(222, 226, 230, 0.5);
+        transition: all .3s;
+        width: 19rem;
+        height: 4rem; }
+      #selectCharacter .selectCharacter__container .selectCharacter__header .header__btn:hover {
+        background-color: #ced4da; }
+    #selectCharacter .selectCharacter__container #selectCharacter__character {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 3.2rem;
+      column-gap: 6.4rem; }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container input {
+        display: none; }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label {
+        background-color: rgba(222, 226, 230, 0.25);
+        padding: 3.2rem;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 64px;
+        transition: all .3s; }
+        #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__img img {
+          height: 20rem; }
+        #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info {
+          display: grid;
+          grid-template-rows: auto auto;
+          row-gap: 3.2rem; }
+          #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__name {
+            color: #ced4da;
+            font-family: 'Cormorant Garamond';
+            font-style: Italic;
+            font-weight: bold;
+            font-size: 3.8em;
+            text-transform: capitalize;
+            text-align: center; }
+          #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats {
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 6.4rem; }
+            #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats .stats__names {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: space-between;
+              font-family: 'Cormorant Garamond';
+              color: #ced4da;
+              font-size: 2em;
+              font-weight: 400;
+              font-style: italic; }
+            #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats .stats__values {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: space-between;
+              text-transform: capitalize;
+              font-family: 'Cormorant Garamond';
+              color: #ced4da;
+              font-size: 2.4em;
+              font-weight: bolder; }
+            #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats .life {
+              color: #7b0d1e; }
+            #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats .attackStat {
+              color: #f6aa1c; }
+            #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info .characterInfo__stats .manaStat {
+              color: #03045e; }
+          #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label .character__info label:hover {
+            cursor: pointer; }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .character__label:hover {
+        background-color: rgba(222, 226, 230, 0.5); }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .selected-assasin {
+        background-color: rgba(58, 1, 92, 0.5); }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .selected-warrior {
+        background-color: rgba(123, 13, 30, 0.5); }
+      #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .selected-wizzard {
+        background-color: rgba(3, 4, 94, 0.5); }
