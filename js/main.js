@@ -1,14 +1,14 @@
 // PERSONAJES
 class Character {
-    constructor(name, type, img, rageImg, winImg, looseImg, life, attackStat, manaStat) {
+    constructor(name, type, img, rageImg, winImg, looseImg, lifeStat, attackStat, manaStat) {
         this.name = name;
         this.type = type;
         this.img = img;
         this.rageImg = rageImg;
         this.winImg = winImg;
         this.looseImg = looseImg;
-        this.life = life;
-        this.initialLife = life;
+        this.lifeStat = lifeStat;
+        this.initialLife = lifeStat;
         this.manaStat = manaStat;
         this.initialMana = manaStat;
         this.attackStat = attackStat;
@@ -36,18 +36,27 @@ const allCharacters = [astaroth, tiamat, baphomet, mephistopheles, nergal, vestr
 
 // ATAQUES
 class Attack {
-    constructor(type, damage, mana) {
+    constructor(type, damage, mana, lifeBonus) {
         this.type = type;
         this.damage = damage;
         this.mana = mana;
+        this.lifeBonus = lifeBonus;
+
+        this.damageForPlayer = damage;
+        this.manaForPlayer = mana;
+        this.lifeBonusForPlayer = lifeBonus;
+
+        this.damageForNpc = damage;
+        this.manaForNpc = mana;
+        this.lifeBonusForNpc = lifeBonus;
     }
 };
 
-const swordSlash = new Attack('Cuerpo a Cuerpo', 15000, 2000);
-const fireBalls = new Attack('Hechizo', 12000, 8000);
-const assassinsDaggers = new Attack('Sigilo', 20000, 4000);
+const swordSlash = new Attack('Cuerpo a Cuerpo', 15000, 2000, 0);
+const fireBalls = new Attack('Hechizo', 12000, 8000, 0);
+const assassinsDaggers = new Attack('Sigilo', 20000, 4000, 0);
 
-const Attacks = [swordSlash, fireBalls, assassinsDaggers];
+const allAttacks = [swordSlash, fireBalls, assassinsDaggers];
 
 // JUGADOR Y ENEMIGO
 const humanPlayer = [];
@@ -83,8 +92,40 @@ favCharacterContainer.style.opacity = '0';
 // Select character
 const selectCharacterContainer = document.getElementById('selectCharacter__character');
 const selectCharacterInput = document.getElementById('character__input');
-let selectCharacterBtn ;
+let selectCharacterBtn = document.getElementById('selectCharacter__btn');
 let characterContainer ;
+// Battle
+const humanPlayerImgBattleContainer = document.getElementById('player__img');
+const humanPlayerBattleCharacterName = document.getElementById('player__name');
+const humanPlayerBattleCharacterType = document.getElementById('playerStat__type');
+const humanPlayerBattleCharacterLife = document.getElementById('playerStat__life');
+const humanPlayerBattleCharacterAttack = document.getElementById('playerStat__attack');
+const humanPlayerBattleCharacterMana = document.getElementById('playerStat__mana');
+
+const npcPlayerImgBattleContainer = document.getElementById('npc__img');
+const npcPlayerBattleCharacterName = document.getElementById('npc__name');
+const npcPlayerBattleCharacterType = document.getElementById('npcStat__type');
+const npcPlayerBattleCharacterLife = document.getElementById('npcStat__life');
+const npcPlayerBattleCharacterAttack = document.getElementById('npcStat__attack');
+const npcPlayerBattleCharacterMana = document.getElementById('npcStat__mana');
+
+const attackSlashInfoDamageForPlayer = document.getElementById('attackSlash__info--damage');
+const attackSlashInfoManaForPlayer = document.getElementById('attackSlash__info--manaRequired');
+const attackSlashInfoBonusForPlayer = document.getElementById('attackSlash__info--bonus');
+
+const attackFireInfoDamageForPlayer = document.getElementById('attackFire__info--damage');
+const attackFireInfoManaForPlayer = document.getElementById('attackFire__info--manaRequired');
+const attackFireInfoBonusForPlayer = document.getElementById('attackFire__info--bonus');
+
+const attackDaggersInfoDamageForPlayer = document.getElementById('attackDaggers__info--damage');
+const attackDaggersInfoManaForPlayer = document.getElementById('attackDaggers__info--manaRequired');
+const attackDaggersInfoBonusForPlayer = document.getElementById('attackDaggers__info--bonus');
+
+
+
+const btnAttackSlash = document.getElementById('attack__btn--slash');
+const btnAttackFire = document.getElementById('attack__btn--fire');
+const btnAttackDaggers = document.getElementById('attack__btn--daggers');
 
 
 function welcomeGame(){
@@ -97,7 +138,9 @@ function welcomeGame(){
 function characterSelection() {
     sectionWelcomeGame.style.display = 'none';
     sectionSelectCharacter.style.display = 'grid';
-    
+    selectCharacterBtn.addEventListener('click', selectEnemyCharacter);
+
+
     allCharacters.forEach((character) => {
         availableCharacters = ` 
         <div class="character__container">
@@ -117,7 +160,7 @@ function characterSelection() {
                             </div>
                             <div class="stats__values">
                                 <p class="stat__data">${character.type}</p>
-                                <p class="stat__data life">${character.life}</p>
+                                <p class="stat__data life">${character.lifeStat}</p>
                                 <p class="stat__data attackStat">${character.attackStat}</p>
                                 <p class="stat__data manaStat">${character.manaStat}</p>
                             </div>          
@@ -127,7 +170,6 @@ function characterSelection() {
             </div>
         `
         selectCharacterContainer.innerHTML += availableCharacters;
-        selectCharacterBtn = document.getElementById('selectCharacter__btn');
 
         inputAstaroth = document.getElementById('astaroth');
         characterContainerAstaroth = document.getElementById("character__astaroth--bg");
@@ -221,6 +263,220 @@ function characterSelection() {
     });
 
 };
+
+function selectEnemyCharacter(){
+    
+    function verifyChoose(){
+        if(inputAstaroth.checked){
+            humanPlayer.push(allCharacters[0]);
+            return true;
+        } else if (inputTiamat.checked){
+            humanPlayer.push(allCharacters[1]);
+            return true;
+        } else if (inputBaphomet.checked){
+            humanPlayer.push(allCharacters[2]);
+            return true;
+        }else if(inputMephistopheles.checked){
+            humanPlayer.push(allCharacters[3]);
+            return true;
+        }else if(inputNergal.checked){
+            humanPlayer.push(allCharacters[4]);
+            return true;
+        }else if(inputVestri.checked){
+            humanPlayer.push(allCharacters[5]);
+            return true;
+        }else if(inputCimeries.checked){
+            humanPlayer.push(allCharacters[6]);
+            return true;
+        }else if(inputGorgon.checked){
+            humanPlayer.push(allCharacters[7]);
+            return true;
+        } else {
+            // En caso de que no haya seleccionado personaje
+            let aceptaSeleccionar = confirm('Por favor, seleccione un personaje para empezar la batalla.');
+            if(aceptaSeleccionar){
+                reiniciarJuego();
+            } else {
+                // Ah sos re troll jajaja
+                window.close();
+            }
+        }
+    };
+
+    function randomNpcCharacter(){
+        let randomCharacter = randomNum(1,8);
+
+        if(randomCharacter == 1){
+            npcPlayer.push(allCharacters[0]);
+            return true;
+        } else if(randomCharacter == 2){
+            npcPlayer.push(allCharacters[1]);
+            return true;
+        } else if(randomCharacter == 3){
+            npcPlayer.push(allCharacters[2]);
+            return true;
+        } else if(randomCharacter == 4){
+            npcPlayer.push(allCharacters[3]);
+            return true;
+        } else if(randomCharacter == 5){
+            npcPlayer.push(allCharacters[4]);
+            return true;
+        } else if(randomCharacter == 6){
+            npcPlayer.push(allCharacters[5]);
+            return true;
+        } else if(randomCharacter == 7){
+            npcPlayer.push(allCharacters[6]);
+            return true;
+        } else {
+            npcPlayer.push(allCharacters[7]);
+            return true;
+        }
+    };
+
+    verifyChoose();
+    randomNpcCharacter();
+    
+    if(verifyChoose && randomNpcCharacter){
+        battle();
+    } else {
+        alert('Ha ocurrido un error refresca la pagina.')
+    }
+    
+};
+
+function battle(){
+    sectionSelectCharacter.style.display = 'none';
+    sectionBattle.style.display = 'grid';
+
+    // Initial values
+    humanPlayerImgBattleContainer.innerHTML = humanPlayer[0].rageImg
+    humanPlayerBattleCharacterName.innerHTML = humanPlayer[0].name
+    humanPlayerBattleCharacterType.innerHTML = humanPlayer[0].type
+    humanPlayerBattleCharacterLife.innerHTML = humanPlayer[0].lifeStat
+    humanPlayerBattleCharacterAttack.innerHTML = humanPlayer[0].attackStat
+    humanPlayerBattleCharacterMana.innerHTML = humanPlayer[0].manaStat
+    npcPlayerImgBattleContainer.innerHTML = npcPlayer[0].rageImg
+    npcPlayerBattleCharacterName.innerHTML = npcPlayer[0].name
+    npcPlayerBattleCharacterType.innerHTML = npcPlayer[0].type
+    npcPlayerBattleCharacterLife.innerHTML = npcPlayer[0].lifeStat
+    npcPlayerBattleCharacterAttack.innerHTML = npcPlayer[0].attackStat
+    npcPlayerBattleCharacterMana.innerHTML = npcPlayer[0].manaStat
+    // Attack values
+    function attackValuesPlayer(){
+        if(humanPlayer[0].type == 'guerrero'){
+            // Slash
+            allAttacks[0].damageForPlayer += 1000;
+            allAttacks[0].manaForPlayer -= 1000;
+            // Fire
+            allAttacks[1].damageForPlayer -= 2000;
+            allAttacks[1].manaForPlayer += 4000;
+            allAttacks[1].lifeBonusForPlayer += 5000;
+            // Daggers
+            allAttacks[2].damageForPlayer -= 1000;
+            allAttacks[2].manaForPlayer += 1000;
+            allAttacks[2].lifeBonusForPlayer += 1000;
+        } else if(humanPlayer[0].type == 'asesino'){
+            // Slash
+            allAttacks[0].damageForPlayer -= 2000;
+            allAttacks[0].manaForPlayer += 3000;
+            allAttacks[1].lifeBonusForPlayer += 2500;
+            // Fire
+            allAttacks[1].damageForPlayer -= 3000;
+            allAttacks[1].manaForPlayer += 6000;
+            allAttacks[1].lifeBonusForPlayer += 2500;
+            // Daggers
+            allAttacks[2].damageForPlayer += 3000;
+            allAttacks[2].manaForPlayer -= 2000;
+
+        } else if (humanPlayer[0].type == 'mago'){
+            // Slash
+            allAttacks[0].damageForPlayer -= 4000;
+            allAttacks[0].manaForPlayer += 4000;
+            allAttacks[0].lifeBonusForPlayer += 6000;
+            // Fire
+            allAttacks[1].damageForPlayer += 3000;
+            allAttacks[1].manaForPlayer -= 4000;
+            // Daggers
+            allAttacks[2].damageForPlayer -= 3000;
+            allAttacks[2].manaForPlayer += 3000;
+            allAttacks[2].lifeBonusForPlayer += 2000;
+        }
+    };
+    function attackValuesNpc(){
+        if(npcPlayer[0].type == 'guerrero'){
+            // Slash
+            allAttacks[0].damageForNpc += 1000;
+            allAttacks[0].manaForNpc -= 1000;
+            // Fire
+            allAttacks[1].damageForNpc -= 2000;
+            allAttacks[1].manaForNpc += 4000;
+            allAttacks[1].lifeBonusForNpc += 5000;
+            // Daggers
+            allAttacks[2].damageForNpc -= 1000;
+            allAttacks[2].manaForNpc += 1000;
+            allAttacks[2].lifeBonusForNpc += 1000;
+        } else if(npcPlayer[0].type == 'asesino'){
+            // Slash
+            allAttacks[0].damageForNpc -= 2000;
+            allAttacks[0].manaForNpc += 3000;
+            allAttacks[1].lifeBonusForNpc += 2500;
+            // Fire
+            allAttacks[1].damageForNpc -= 3000;
+            allAttacks[1].manaForNpc += 6000;
+            allAttacks[1].lifeBonusForNpc += 2500;
+            // Daggers
+            allAttacks[2].damageForNpc += 3000;
+            allAttacks[2].manaForNpc -= 2000;
+
+        } else if (npcPlayer[0].type == 'mago'){
+            // Slash
+            allAttacks[0].damageForNpc -= 4000;
+            allAttacks[0].manaForNpc += 4000;
+            allAttacks[0].lifeBonusForNpc += 6000;
+            // Fire
+            allAttacks[1].damageForNpc += 3000;
+            allAttacks[1].manaForNpc -= 4000;
+            // Daggers
+            allAttacks[2].damageForNpc -= 3000;
+            allAttacks[2].manaForNpc += 3000;
+            allAttacks[2].lifeBonusForNpc += 2000;
+        }
+    };
+    attackValuesNpc();
+    attackValuesPlayer();
+    // Print values
+    attackSlashInfoDamageForPlayer.innerHTML = allAttacks[0].damageForPlayer;
+    attackSlashInfoManaForPlayer.innerHTML =  allAttacks[0].manaForPlayer;
+    attackSlashInfoBonusForPlayer.innerHTML = allAttacks[0].lifeBonusForPlayer;
+
+    attackFireInfoDamageForPlayer.innerHTML = allAttacks[1].damageForPlayer;
+    attackFireInfoManaForPlayer.innerHTML = allAttacks[1].damageForPlayer;
+    attackFireInfoBonusForPlayer.innerHTML = allAttacks[1].damageForPlayer;
+
+    attackDaggersInfoDamageForPlayer.innerHTML = allAttacks[2].damageForPlayer;
+    attackDaggersInfoManaForPlayer.innerHTML = allAttacks[2].damageForPlayer;
+    attackDaggersInfoBonusForPlayer.innerHTML = allAttacks[2].damageForPlayer;
+
+    // Button listeners
+    // btnAttackSlash.addEventListener('click', slashAttack);
+    // btnAttackFire.addEventListener('click', fireAttack);
+    // btnAttackDaggers.addEventListener('click', daggersAttack);
+    // Attack Functions
+    function slashAttack(atacante, defensor){
+        
+    }
+
+};
+
+
+function reiniciarJuego(){
+    location.reload();
+};
+
+function randomNum(min, max){
+    return Math.floor(Math.random()* (max - min + 1) + min);
+};
+
 window.addEventListener('load', welcomeGame);
 
 

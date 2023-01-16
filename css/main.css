@@ -198,3 +198,129 @@ body {
         background-color: rgba(123, 13, 30, 0.5); }
       #selectCharacter .selectCharacter__container #selectCharacter__character .character__container .selected-wizzard {
         background-color: rgba(3, 4, 94, 0.5); }
+
+#battle {
+  background-image: url(../img/backgrounds/battle-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto;
+  padding: 6.4rem; }
+  #battle .battle__container {
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 6.4rem; }
+    #battle .battle__container .battle__header .header__title {
+      font-weight: 400;
+      font-size: 9.6em;
+      font-family: 'UnifrakturMaguntia';
+      color: #f6aa1c; }
+    #battle .battle__container .battle__header .header__alert {
+      background-color: rgba(222, 226, 230, 0.5);
+      height: 10rem;
+      max-width: 35rem;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #battle .battle__container .battle__header .header__alert p {
+        color: #f6aa1c;
+        font-family: 'Cormorant Garamond';
+        font-style: Italic;
+        font-weight: bold;
+        font-size: 2.4em;
+        text-align: center; }
+    #battle .battle__container .battle__characters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 12.8rem; }
+      #battle .battle__container .battle__characters .character__battle--card {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 6.4rem;
+        padding: 3.2rem;
+        background-color: rgba(222, 226, 230, 0.25); }
+        #battle .battle__container .battle__characters .character__battle--card .character__img img {
+          height: 220px; }
+        #battle .battle__container .battle__characters .character__battle--card .character__info {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between; }
+          #battle .battle__container .battle__characters .character__battle--card .character__info h3 {
+            text-transform: capitalize;
+            align-self: center;
+            font-family: 'Cormorant Garamond';
+            color: #ced4da;
+            font-size: 3.8em;
+            font-weight: 400;
+            font-style: italic; }
+          #battle .battle__container .battle__characters .character__battle--card .character__info .character__stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 6.4rem; }
+            #battle .battle__container .battle__characters .character__battle--card .character__info .character__stats .stats__name {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: space-between;
+              gap: 1.6rem; }
+              #battle .battle__container .battle__characters .character__battle--card .character__info .character__stats .stats__name p {
+                font-family: 'Cormorant Garamond';
+                color: #ced4da;
+                font-size: 2.4em;
+                font-weight: 400;
+                font-style: italic; }
+            #battle .battle__container .battle__characters .character__battle--card .character__info .character__stats .stats__data {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: space-between;
+              gap: 1.6rem; }
+              #battle .battle__container .battle__characters .character__battle--card .character__info .character__stats .stats__data p {
+                font-family: 'Cormorant Garamond';
+                color: #ced4da;
+                font-size: 2.4em;
+                font-weight: 400;
+                font-style: italic; }
+    #battle .battle__container .battle__attack {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%; }
+      #battle .battle__container .battle__attack .attack {
+        padding: 3.2rem 6.4rem;
+        background-color: rgba(222, 226, 230, 0.25);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        gap: 1.6rem;
+        transition: all .3s; }
+        #battle .battle__container .battle__attack .attack button {
+          background-color: rgba(12, 12, 12, 0);
+          border: none;
+          cursor: pointer; }
+          #battle .battle__container .battle__attack .attack button .attack__name {
+            text-align: center;
+            font-family: 'Cormorant Garamond';
+            color: #ced4da;
+            font-size: 3.2em;
+            font-weight: 400;
+            font-style: italic;
+            transition: all .3s; }
+        #battle .battle__container .battle__attack .attack button:hover .attack__name {
+          color: black; }
+        #battle .battle__container .battle__attack .attack .attack__info {
+          font-family: 'Cormorant Garamond';
+          color: #ced4da;
+          font-size: 1.8em;
+          font-weight: 400;
+          font-style: italic; }
+          #battle .battle__container .battle__attack .attack .attack__info span {
+            font-size: 2em; }
