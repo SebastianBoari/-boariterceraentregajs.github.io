@@ -1,4 +1,6 @@
-// PERSONAJES
+// Global vars
+
+// Characters
 class Character {
     constructor(name, type, img, rageImg, winImg, looseImg, lifeStat, attackStat, manaStat) {
         this.name = name;
@@ -8,33 +10,23 @@ class Character {
         this.winImg = winImg;
         this.looseImg = looseImg;
         this.lifeStat = lifeStat;
+        this.attackStat = attackStat;
         this.initialLife = lifeStat;
         this.manaStat = manaStat;
         this.initialMana = manaStat;
-        this.attackStat = attackStat;
     }
 };
-
-const astaroth = new Character('astaroth', 'asesino', '<img src="./img/characters/character-astaroth.png" alt="">', '<img src="./img/characters/character-astaroth-rage.png" alt="">', '<img src="./img/characters/character-astaroth-win.png" alt="">', '<img src="./img/characters/character-astaroth-loose.png" alt="">', 25637, 15231, 4982);
-
-const mephistopheles = new Character('mephistopheles', 'asesino', '<img src="./img/characters/character-mephistopheles.png" alt="">', '<img src="./img/characters/character-mephistopheles-rage.png" alt="">', '<img src="./img/characters/character-mephistopheles-win.png" alt="">', '<img src="./img/characters/character-mephistopheles-loose.png" alt="">', 19891, 20112, 4120);
-
-const cimeries = new Character('cimeries', 'asesino', '<img src="./img/characters/character-cimeries.png" alt="">', '<img src="./img/characters/character-cimeries-rage.png" alt="">', '<img src="./img/characters/character-cimeries-win.png" alt="">', '<img src="./img/characters/character-cimeries-loose.png" alt="">', 15217, 25213, 3111);
-
-const tiamat = new Character('tiamat', 'guerrero', '<img src="./img/characters/character-tiamat.png" alt="">', '<img src="./img/characters/character-tiamat-rage.png" alt="">', '<img src="./img/characters/character-tiamat-win.png" alt="">', '<img src="./img/characters/character-tiamat-loose.png" alt="">', 44892, 12213, 5111);
-
-const nergal = new Character('nergal', 'guerrero', '<img src="./img/characters/character-nergal.png" alt="">', '<img src="./img/characters/character-nergal-rage.png" alt="">', '<img src="./img/characters/character-nergal-win.png" alt="">', '<img src="./img/characters/character-nergal-loose.png" alt="">', 42510, 15101, 4230);
-
-const gorgon = new Character('gorgon', 'guerrero', '<img src="./img/characters/character-gorgon.png" alt="">', '<img src="./img/characters/character-gorgon-rage.png" alt="">', '<img src="./img/characters/character-gorgon-win.png" alt="">', '<img src="./img/characters/character-gorgon-loose.png" alt="">', 35203, 18121, 2999);
-
-const baphomet = new Character('baphomet', 'mago', '<img src="./img/characters/character-baphomet.png" alt="">', '<img src="./img/characters/character-baphomet-rage.png" alt="">', '<img src="./img/characters/character-baphomet-win.png" alt="">', '<img src="./img/characters/character-baphomet-loose.png" alt="">', 14982, 10128, 34999);
-
-const vestri = new Character('vestri', 'mago', '<img src="./img/characters/character-vestri.png" alt="">', '<img src="./img/characters/character-vestri-rage.png" alt="">', '<img src="./img/characters/character-vestri-win.png" alt="">', '<img src="./img/characters/character-vestri-loose.png" alt="">', 9999, 12023, 30401);
-
+const astaroth = new Character('astaroth', 'asesino', '<img src="./img/characters/character-astaroth.png" alt="">', '<img src="./img/characters/character-astaroth-rage.png" alt="">', '<img src="./img/characters/character-astaroth-win.png" alt="">', '<img src="./img/characters/character-astaroth-loose.png" alt="">', 256370, 15231, 49820);
+const mephistopheles = new Character('mephistopheles', 'asesino', '<img src="./img/characters/character-mephistopheles.png" alt="">', '<img src="./img/characters/character-mephistopheles-rage.png" alt="">', '<img src="./img/characters/character-mephistopheles-win.png" alt="">', '<img src="./img/characters/character-mephistopheles-loose.png" alt="">', 198910, 20112, 4120);
+const cimeries = new Character('cimeries', 'asesino', '<img src="./img/characters/character-cimeries.png" alt="">', '<img src="./img/characters/character-cimeries-rage.png" alt="">', '<img src="./img/characters/character-cimeries-win.png" alt="">', '<img src="./img/characters/character-cimeries-loose.png" alt="">', 152170, 25213, 31110);
+const tiamat = new Character('tiamat', 'guerrero', '<img src="./img/characters/character-tiamat.png" alt="">', '<img src="./img/characters/character-tiamat-rage.png" alt="">', '<img src="./img/characters/character-tiamat-win.png" alt="">', '<img src="./img/characters/character-tiamat-loose.png" alt="">', 448920, 12213, 51110);
+const nergal = new Character('nergal', 'guerrero', '<img src="./img/characters/character-nergal.png" alt="">', '<img src="./img/characters/character-nergal-rage.png" alt="">', '<img src="./img/characters/character-nergal-win.png" alt="">', '<img src="./img/characters/character-nergal-loose.png" alt="">', 425100, 15101, 42300);
+const gorgon = new Character('gorgon', 'guerrero', '<img src="./img/characters/character-gorgon.png" alt="">', '<img src="./img/characters/character-gorgon-rage.png" alt="">', '<img src="./img/characters/character-gorgon-win.png" alt="">', '<img src="./img/characters/character-gorgon-loose.png" alt="">', 352030, 18121, 29990);
+const baphomet = new Character('baphomet', 'mago', '<img src="./img/characters/character-baphomet.png" alt="">', '<img src="./img/characters/character-baphomet-rage.png" alt="">', '<img src="./img/characters/character-baphomet-win.png" alt="">', '<img src="./img/characters/character-baphomet-loose.png" alt="">', 149820, 10128, 349990);
+const vestri = new Character('vestri', 'mago', '<img src="./img/characters/character-vestri.png" alt="">', '<img src="./img/characters/character-vestri-rage.png" alt="">', '<img src="./img/characters/character-vestri-win.png" alt="">', '<img src="./img/characters/character-vestri-loose.png" alt="">', 99990, 12023, 304010);
 const allCharacters = [astaroth, tiamat, baphomet, mephistopheles, nergal, vestri, cimeries,  gorgon];
 
-
-// ATAQUES
+// Attacks
 class Attack {
     constructor(type, damage, mana, lifeBonus) {
         this.type = type;
@@ -51,17 +43,14 @@ class Attack {
         this.lifeBonusForNpc = lifeBonus;
     }
 };
-
 const swordSlash = new Attack('Cuerpo a Cuerpo', 15000, 2000, 0);
 const fireBalls = new Attack('Hechizo', 12000, 8000, 0);
 const assassinsDaggers = new Attack('Sigilo', 20000, 4000, 0);
-
 const allAttacks = [swordSlash, fireBalls, assassinsDaggers];
 
-// JUGADOR Y ENEMIGO
+// Players
 const humanPlayer = [];
 const npcPlayer = [];
-
 // Characters Inputs
 let availableCharacters  ;
 let inputAstaroth ;
@@ -89,6 +78,8 @@ const sectionEndgame = document.getElementById('endgame');
 const playButton = document.getElementById('welcome__btn');
 const favCharacterContainer = document.getElementById('favCharacter__container');
 favCharacterContainer.style.opacity = '0';
+const favCharacterImg = document.getElementById('favCharacter__img');
+const favCharacterName = document.getElementById('favCharacter__name');
 // Select character
 const selectCharacterContainer = document.getElementById('selectCharacter__character');
 const selectCharacterInput = document.getElementById('character__input');
@@ -101,46 +92,61 @@ const humanPlayerBattleCharacterType = document.getElementById('playerStat__type
 const humanPlayerBattleCharacterLife = document.getElementById('playerStat__life');
 const humanPlayerBattleCharacterAttack = document.getElementById('playerStat__attack');
 const humanPlayerBattleCharacterMana = document.getElementById('playerStat__mana');
-
 const npcPlayerImgBattleContainer = document.getElementById('npc__img');
 const npcPlayerBattleCharacterName = document.getElementById('npc__name');
 const npcPlayerBattleCharacterType = document.getElementById('npcStat__type');
 const npcPlayerBattleCharacterLife = document.getElementById('npcStat__life');
 const npcPlayerBattleCharacterAttack = document.getElementById('npcStat__attack');
 const npcPlayerBattleCharacterMana = document.getElementById('npcStat__mana');
-
 const attackSlashInfoDamageForPlayer = document.getElementById('attackSlash__info--damage');
 const attackSlashInfoManaForPlayer = document.getElementById('attackSlash__info--manaRequired');
 const attackSlashInfoBonusForPlayer = document.getElementById('attackSlash__info--bonus');
-
 const attackFireInfoDamageForPlayer = document.getElementById('attackFire__info--damage');
 const attackFireInfoManaForPlayer = document.getElementById('attackFire__info--manaRequired');
 const attackFireInfoBonusForPlayer = document.getElementById('attackFire__info--bonus');
-
 const attackDaggersInfoDamageForPlayer = document.getElementById('attackDaggers__info--damage');
 const attackDaggersInfoManaForPlayer = document.getElementById('attackDaggers__info--manaRequired');
 const attackDaggersInfoBonusForPlayer = document.getElementById('attackDaggers__info--bonus');
-
-
-
+let winRoundCounterPlayer = 0;
+let winRoundCounterNpc = 0;
+const countRoundForPlayer = document.getElementById('player__counter');
+const countRoundForNpc = document.getElementById('npc__counter');
 const btnAttackSlash = document.getElementById('attack__btn--slash');
 const btnAttackFire = document.getElementById('attack__btn--fire');
 const btnAttackDaggers = document.getElementById('attack__btn--daggers');
+const btnNextRound = document.getElementById('nextRound__btn');
+btnNextRound.disabled = true;
+// Endgame
+const EndgameTxtContainer = document.getElementById('endgame__panel');
+const restartGameBtn = document.getElementById('endgame__restartBtn');
+const lastCharacterSelectedName = localStorage.getItem('lastCharacter');
+const lastCharacterSelectedImg = localStorage.getItem('lastCharacterImg');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Functions and workflow
 
+// Game Init
 function welcomeGame(){
     sectionSelectCharacter.style.display = 'none';
     sectionBattle.style.display = 'none';
     sectionEndgame.style.display = 'none';
+    
+    if(lastCharacterSelectedName !== null && lastCharacterSelectedImg !== null){
+        favCharacterContainer.style.opacity = '1';
+        favCharacterImg.innerHTML = localStorage.getItem('lastCharacterImg');
+        favCharacterName.innerHTML = localStorage.getItem('lastCharacter');
+    }
+
     playButton.addEventListener('click', characterSelection);
 };
 
 function characterSelection() {
+    // Hide sections
     sectionWelcomeGame.style.display = 'none';
     sectionSelectCharacter.style.display = 'grid';
     selectCharacterBtn.addEventListener('click', selectEnemyCharacter);
 
-
+    // Print on screen characters
     allCharacters.forEach((character) => {
         availableCharacters = ` 
         <div class="character__container">
@@ -171,6 +177,7 @@ function characterSelection() {
         `
         selectCharacterContainer.innerHTML += availableCharacters;
 
+        // Set inputs per character (harcodeado)
         inputAstaroth = document.getElementById('astaroth');
         characterContainerAstaroth = document.getElementById("character__astaroth--bg");
         inputTiamat = document.getElementById('tiamat');
@@ -189,6 +196,7 @@ function characterSelection() {
         characterContainerGorgon = document.getElementById("character__gorgon--bg");
     });
 
+    // Input listeners (styles only)
     inputBaphomet.addEventListener("change", () => {
         characterContainerBaphomet.classList.add("selected-wizzard");
     });
@@ -261,11 +269,9 @@ function characterSelection() {
             characterContainerGorgon.classList.remove("selected-warrior");
         }
     });
-
 };
 
 function selectEnemyCharacter(){
-    
     function verifyChoose(){
         if(inputAstaroth.checked){
             humanPlayer.push(allCharacters[0]);
@@ -292,12 +298,10 @@ function selectEnemyCharacter(){
             humanPlayer.push(allCharacters[7]);
             return true;
         } else {
-            // En caso de que no haya seleccionado personaje
-            let aceptaSeleccionar = confirm('Por favor, seleccione un personaje para empezar la batalla.');
-            if(aceptaSeleccionar){
-                reiniciarJuego();
+            let agreeToSelect = confirm('Por favor, seleccione un personaje para empezar la batalla.');
+            if(agreeToSelect){
+                restartGame();
             } else {
-                // Ah sos re troll jajaja
                 window.close();
             }
         }
@@ -332,7 +336,6 @@ function selectEnemyCharacter(){
             return true;
         }
     };
-
     verifyChoose();
     randomNpcCharacter();
     
@@ -341,14 +344,232 @@ function selectEnemyCharacter(){
     } else {
         alert('Ha ocurrido un error refresca la pagina.')
     }
-    
+};
+// Attack values
+function assignAttackValues(playerType, isHuman) {
+    for (let i = 0; i < allAttacks.length; i++) {
+        if (playerType === 'guerrero') {
+            // Asignar valores para ataques de guerrero
+            if (isHuman) {
+                allAttacks[i].damageForPlayer += 1000;
+                allAttacks[i].manaForPlayer -= 1000;
+            } else {
+                allAttacks[i].damageForNpc += 1000;
+                allAttacks[i].manaForNpc -= 1000;
+            }
+        } else if (playerType === 'asesino') {
+            // Asignar valores para ataques de asesino
+            if (isHuman) {
+                allAttacks[i].damageForPlayer -= 2000;
+                allAttacks[i].manaForPlayer += 3000;
+                allAttacks[i].lifeBonusForPlayer += 2500;
+            } else {
+                allAttacks[i].damageForNpc -= 2000;
+                allAttacks[i].manaForNpc += 3000;
+                allAttacks[i].lifeBonusForNpc += 2500;
+            }
+        } else if (playerType === 'mago') {
+            // Asignar valores para ataques de mago
+            if (isHuman) {
+                allAttacks[i].damageForPlayer -= 4000;
+                allAttacks[i].manaForPlayer += 4000;
+                allAttacks[i].lifeBonusForPlayer += 6000;
+            } else {
+                allAttacks[i].damageForNpc -= 4000;
+                allAttacks[i].manaForNpc += 4000;
+                allAttacks[i].lifeBonusForNpc += 6000;
+            }
+        }
+    }
+};
+function statsUpdate(){
+    // For human
+    humanPlayerBattleCharacterLife.innerHTML = humanPlayer[0].lifeStat
+    humanPlayerBattleCharacterAttack.innerHTML = humanPlayer[0].attackStat
+    humanPlayerBattleCharacterMana.innerHTML = humanPlayer[0].manaStat
+    // For Npc
+    npcPlayerBattleCharacterLife.innerHTML = npcPlayer[0].lifeStat
+    npcPlayerBattleCharacterAttack.innerHTML = npcPlayer[0].attackStat
+    npcPlayerBattleCharacterMana.innerHTML = npcPlayer[0].manaStat
+};
+// Attack Functions
+function slashAttack(attackerIsHuman){
+    if(attackerIsHuman){
+        npcPlayer[0].lifeStat -= (humanPlayer[0].attackStat + allAttacks[0].damageForPlayer);
+
+        humanPlayer[0].manaStat -= allAttacks[0].manaForPlayer;
+        humanPlayer[0].lifeStat += allAttacks[0].lifeBonusForPlayer;
+    } else {
+        humanPlayer[0].lifeStat -= (npcPlayer[0].attackStat + allAttacks[0].damageForNpc);
+        
+        npcPlayer[0].manaStat -= allAttacks[0].manaForNpc;
+        npcPlayer[0].lifeStat += allAttacks[0].lifeBonusForNpc;
+    }
+};
+function fireAttack(attackerIsHuman){
+    if(attackerIsHuman){
+        npcPlayer[0].lifeStat -= (humanPlayer[0].attackStat + allAttacks[1].damageForPlayer);
+
+        humanPlayer[0].manaStat -= allAttacks[1].manaForPlayer;
+        humanPlayer[0].lifeStat += allAttacks[1].lifeBonusForPlayer;
+    } else {
+        humanPlayer[0].lifeStat -= (npcPlayer[0].attackStat + allAttacks[1].damageForNpc);
+        
+        npcPlayer[0].manaStat -= allAttacks[1].manaForNpc;
+        npcPlayer[0].lifeStat += allAttacks[1].lifeBonusForNpc;
+    }
+};
+function daggersAttack(attackerIsHuman){
+    if(attackerIsHuman){
+        npcPlayer[0].lifeStat -= (humanPlayer[0].attackStat + allAttacks[2].damageForPlayer);
+
+        humanPlayer[0].manaStat -= allAttacks[2].manaForPlayer;
+        humanPlayer[0].lifeStat += allAttacks[2].lifeBonusForPlayer;
+    } else {
+        humanPlayer[0].lifeStat -= (npcPlayer[0].attackStat + allAttacks[2].damageForNpc);
+        
+        npcPlayer[0].manaStat -= allAttacks[2].manaForNpc;
+        npcPlayer[0].lifeStat += allAttacks[2].lifeBonusForNpc;
+    }
+};
+// Npc Choose Attack
+function randomAttackForNpc(){
+    let randomAttack = randomNum(1, 3);
+
+    if(randomAttack == 1){
+        slashAttack(false);
+    } else if(randomAttack == 2){
+        fireAttack(false);
+    } else {
+        daggersAttack(false);
+    }
 };
 
+
+
+
+
+
+
+
+// Endgame Screens
+function winScreen(){
+    sectionBattle.style.display = 'none';
+    sectionEndgame.style.display = 'grid';
+    // Clean local storage
+    localStorage.removeItem('npcWins');
+    localStorage.removeItem('playerWins');
+    // Add win txt
+    let winEndgameTxt = `
+        <div class="panel__header">
+        ${humanPlayer[0].winImg}
+        <h3 class="header__title">Victoria</h3>
+        ${npcPlayer[0].looseImg}
+        </div>
+        <div class="panel__txt">
+            <p id="endgame__outcome--txt"><span>${humanPlayer[0].name}</span> ha demostrado ser una fuerza implacable, ha desentrañado los planes ocultos, ha superado las dificultades y ha obtenido la victoria gracias a tu astucia y determinación.</p>
+        </div>
+    `;
+    EndgameTxtContainer.innerHTML = winEndgameTxt;
+    // Restart Game
+    restartGameBtn.addEventListener('click', () => {
+        restartGame();
+        localStorage.setItem('lastCharacter', humanPlayer[0].name);
+        localStorage.setItem('lastCharacterImg', humanPlayer[0].winImg);
+    });
+};
+function looseScreen(){
+    sectionBattle.style.display = 'none';
+    sectionEndgame.style.display = 'grid';
+    sectionEndgame.style.backgroundImage = "url('../img/backgrounds/loose-bg.jpg')";
+    // Clean local storage
+    localStorage.removeItem('npcWins');
+    localStorage.removeItem('playerWins');
+    // Add loose txt
+    let looseEndgameTxt = `
+        <div class="panel__header">
+            ${humanPlayer[0].looseImg}
+            <h3 class="header__title header__title--loose">Derrota</h3>
+            ${npcPlayer[0].winImg}
+        </div>
+        <div class="panel__txt">
+            <p class="loose__txt" id="endgame__outcome--txt">A pesar de tus esfuerzos, tu oponente <span>${npcPlayer[0].name}</span> se ha revelado como un adversario poderoso e implacable. Aunque has luchado valientemente, tus planes no han sido suficientes para superar sus trampas y tácticas. Aprende de esta derrota y vuelve a intentarlo con nueva astucia y determinación.</p> 
+        </div> 
+    `;
+    EndgameTxtContainer.innerHTML = looseEndgameTxt;
+    // Restart Game
+    restartGameBtn.addEventListener('click', restartGame);
+};
+// Count rounds
+function winRoundCounterChecker(){
+    if (winRoundCounterPlayer == 3){
+        winScreen();
+    }  else if (winRoundCounterNpc == 3){
+        looseScreen();
+    }
+};
+// Stats
+function resetStats(){
+    // For human
+    humanPlayer[0].lifeStat = humanPlayer[0].initialLife
+    humanPlayer[0].manaStat = humanPlayer[0].initialMana
+    // For Npc
+    npcPlayer[0].lifeStat = npcPlayer[0].initialLife
+    npcPlayer[0].manaStat = npcPlayer[0].initialLife
+
+    statsUpdate();
+};
+// Update txt count
+function updateRoundCount(){
+    countRoundForPlayer.innerHTML = winRoundCounterPlayer;
+    countRoundForNpc.innerHTML = winRoundCounterNpc;
+};
+// Stats checker (winRound / looseRound)
+function statsChecker(){
+    if(humanPlayer[0].lifeStat <=  0 || humanPlayer[0].manaStat <=  0){
+        btnAttackSlash.disabled = true;
+        btnAttackFire.disabled = true;
+        btnAttackDaggers.disabled = true;
+
+        winRoundCounterNpc++;
+        localStorage.setItem('npcWins', winRoundCounterNpc)
+        updateRoundCount();
+
+        btnNextRound.disabled = false;
+        btnNextRound.addEventListener('click', () => {
+            resetStats();
+            btnAttackSlash.disabled = false;
+            btnAttackFire.disabled = false;
+            btnAttackDaggers.disabled = false;
+            btnNextRound.disabled = true;
+            winRoundCounterChecker();
+        })
+    } else if(npcPlayer[0].lifeStat <=  0 || npcPlayer[0].manaStat <=  0){
+        btnAttackSlash.disabled = true;
+        btnAttackFire.disabled = true;
+        btnAttackDaggers.disabled = true;
+
+        winRoundCounterPlayer++;
+        localStorage.setItem('playerWins', winRoundCounterPlayer)
+        updateRoundCount();
+
+        btnNextRound.disabled = false;
+        btnNextRound.addEventListener('click', () => {
+            resetStats();
+            btnAttackSlash.disabled = false;
+            btnAttackFire.disabled = false;
+            btnAttackDaggers.disabled = false;
+            btnNextRound.disabled = true;
+            winRoundCounterChecker();
+        })
+    }
+};
+// Battle section
 function battle(){
     sectionSelectCharacter.style.display = 'none';
     sectionBattle.style.display = 'grid';
 
-    // Initial values
+    // Initial Characters Stats values
     humanPlayerImgBattleContainer.innerHTML = humanPlayer[0].rageImg
     humanPlayerBattleCharacterName.innerHTML = humanPlayer[0].name
     humanPlayerBattleCharacterType.innerHTML = humanPlayer[0].type
@@ -361,115 +582,45 @@ function battle(){
     npcPlayerBattleCharacterLife.innerHTML = npcPlayer[0].lifeStat
     npcPlayerBattleCharacterAttack.innerHTML = npcPlayer[0].attackStat
     npcPlayerBattleCharacterMana.innerHTML = npcPlayer[0].manaStat
-    // Attack values
-    function attackValuesPlayer(){
-        if(humanPlayer[0].type == 'guerrero'){
-            // Slash
-            allAttacks[0].damageForPlayer += 1000;
-            allAttacks[0].manaForPlayer -= 1000;
-            // Fire
-            allAttacks[1].damageForPlayer -= 2000;
-            allAttacks[1].manaForPlayer += 4000;
-            allAttacks[1].lifeBonusForPlayer += 5000;
-            // Daggers
-            allAttacks[2].damageForPlayer -= 1000;
-            allAttacks[2].manaForPlayer += 1000;
-            allAttacks[2].lifeBonusForPlayer += 1000;
-        } else if(humanPlayer[0].type == 'asesino'){
-            // Slash
-            allAttacks[0].damageForPlayer -= 2000;
-            allAttacks[0].manaForPlayer += 3000;
-            allAttacks[1].lifeBonusForPlayer += 2500;
-            // Fire
-            allAttacks[1].damageForPlayer -= 3000;
-            allAttacks[1].manaForPlayer += 6000;
-            allAttacks[1].lifeBonusForPlayer += 2500;
-            // Daggers
-            allAttacks[2].damageForPlayer += 3000;
-            allAttacks[2].manaForPlayer -= 2000;
 
-        } else if (humanPlayer[0].type == 'mago'){
-            // Slash
-            allAttacks[0].damageForPlayer -= 4000;
-            allAttacks[0].manaForPlayer += 4000;
-            allAttacks[0].lifeBonusForPlayer += 6000;
-            // Fire
-            allAttacks[1].damageForPlayer += 3000;
-            allAttacks[1].manaForPlayer -= 4000;
-            // Daggers
-            allAttacks[2].damageForPlayer -= 3000;
-            allAttacks[2].manaForPlayer += 3000;
-            allAttacks[2].lifeBonusForPlayer += 2000;
-        }
-    };
-    function attackValuesNpc(){
-        if(npcPlayer[0].type == 'guerrero'){
-            // Slash
-            allAttacks[0].damageForNpc += 1000;
-            allAttacks[0].manaForNpc -= 1000;
-            // Fire
-            allAttacks[1].damageForNpc -= 2000;
-            allAttacks[1].manaForNpc += 4000;
-            allAttacks[1].lifeBonusForNpc += 5000;
-            // Daggers
-            allAttacks[2].damageForNpc -= 1000;
-            allAttacks[2].manaForNpc += 1000;
-            allAttacks[2].lifeBonusForNpc += 1000;
-        } else if(npcPlayer[0].type == 'asesino'){
-            // Slash
-            allAttacks[0].damageForNpc -= 2000;
-            allAttacks[0].manaForNpc += 3000;
-            allAttacks[1].lifeBonusForNpc += 2500;
-            // Fire
-            allAttacks[1].damageForNpc -= 3000;
-            allAttacks[1].manaForNpc += 6000;
-            allAttacks[1].lifeBonusForNpc += 2500;
-            // Daggers
-            allAttacks[2].damageForNpc += 3000;
-            allAttacks[2].manaForNpc -= 2000;
+    assignAttackValues(humanPlayer[0].type, true);
+    assignAttackValues(npcPlayer[0].type, false);
 
-        } else if (npcPlayer[0].type == 'mago'){
-            // Slash
-            allAttacks[0].damageForNpc -= 4000;
-            allAttacks[0].manaForNpc += 4000;
-            allAttacks[0].lifeBonusForNpc += 6000;
-            // Fire
-            allAttacks[1].damageForNpc += 3000;
-            allAttacks[1].manaForNpc -= 4000;
-            // Daggers
-            allAttacks[2].damageForNpc -= 3000;
-            allAttacks[2].manaForNpc += 3000;
-            allAttacks[2].lifeBonusForNpc += 2000;
-        }
-    };
-    attackValuesNpc();
-    attackValuesPlayer();
-    // Print values
+    // Print Attack Values
     attackSlashInfoDamageForPlayer.innerHTML = allAttacks[0].damageForPlayer;
     attackSlashInfoManaForPlayer.innerHTML =  allAttacks[0].manaForPlayer;
     attackSlashInfoBonusForPlayer.innerHTML = allAttacks[0].lifeBonusForPlayer;
-
     attackFireInfoDamageForPlayer.innerHTML = allAttacks[1].damageForPlayer;
     attackFireInfoManaForPlayer.innerHTML = allAttacks[1].damageForPlayer;
     attackFireInfoBonusForPlayer.innerHTML = allAttacks[1].damageForPlayer;
-
     attackDaggersInfoDamageForPlayer.innerHTML = allAttacks[2].damageForPlayer;
     attackDaggersInfoManaForPlayer.innerHTML = allAttacks[2].damageForPlayer;
     attackDaggersInfoBonusForPlayer.innerHTML = allAttacks[2].damageForPlayer;
 
     // Button listeners
-    // btnAttackSlash.addEventListener('click', slashAttack);
-    // btnAttackFire.addEventListener('click', fireAttack);
-    // btnAttackDaggers.addEventListener('click', daggersAttack);
-    // Attack Functions
-    function slashAttack(atacante, defensor){
-        
-    }
+    btnAttackSlash.addEventListener('click', () => {
+        slashAttack(true);
+        randomAttackForNpc();
+        statsUpdate();
+        statsChecker();
+    });
+    btnAttackFire.addEventListener('click', () => {
+        fireAttack(true);
+        randomAttackForNpc();
+        statsUpdate();
+        statsChecker();
+
+    });
+    btnAttackDaggers.addEventListener('click', () => {
+        daggersAttack(true);
+        randomAttackForNpc();
+        statsUpdate();
+        statsChecker();
+    });
+
 
 };
-
-
-function reiniciarJuego(){
+function restartGame(){
     location.reload();
 };
 
@@ -479,5 +630,6 @@ function randomNum(min, max){
 
 window.addEventListener('load', welcomeGame);
 
+// Hecho con amor en 3 dias sin dormir disculpe si no se entiende o es mucho codigo innecesario❤️
 
 
