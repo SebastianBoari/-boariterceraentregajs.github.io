@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./img/icon-bloodfire.png">
     <title>Bloodfire</title>
 </head>
 <body>
-
-
-
     <section id="welcome">
         <div class=" welcome__container">
             <h2 class="welcome__title">Bloodfire</h2>
             
             <article class="welcome__favCharacter" id="favCharacter__container">
-                <h4 id="favCharacter__title">Personaje favorito</h4>
-                <img id="favCharacter__img" src="./img/characters/character-astaroth-win.png" alt="">
+                <h4 id="favCharacter__title">Ultimo personaje utilizado</h4>
+                <div id="favCharacter__img">
+
+                </div>
                 <p id="favCharacter__name">Astaroth</p>
             </article>
          
@@ -38,13 +38,16 @@
         </div>        
     </section>
 
-
     <section id="battle">
         <div class="battle__container">
             <article class="battle__header">
                 <h2 class="header__title">Bloodfire</h2>
                 <div class="header__alert">
+                    <div class="count__rounds">
+                        <p id="player__counter">0</p><p> - </p><p id="npc__counter">0</p>
+                    </div>
                     <p id="alert__txt">Gana el mejor de tres rondas</p>
+                    <button id="nextRound__btn">Siguiente ronda</button>
                 </div>
             </article>
     
@@ -121,22 +124,19 @@
             </article>
         </div>
     </section>
-
-
     
     <section id="endgame">
-        <div class="endgame__header">
-            <h2 class="header__title"></h2>
-        </div>
-        
-        <article class="endgame__panel">
-            <div class="panel__header">
-                <h3 class="header__title" id="endgame__outcome"></h3>
+        <div class="endgame__container">
+            <div class="endgame__header">
+                <h2 class="header__title">Bloodfire</h2>
             </div>
-            <p class="panel__txt" id="endgame__outcome--txt"></p>  
-        </article>
+            
+            <article id="endgame__panel">
 
-        <button id="endgame__restartBtn">Volver a jugar</button>
+            </article>
+    
+            <button id="endgame__restartBtn">Volver a jugar</button>
+        </div>
     </section>
 
     <script src="./js/main.js"></script>

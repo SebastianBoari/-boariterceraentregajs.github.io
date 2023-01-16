@@ -1,4 +1,4 @@
-![Bloodfire](https://i.imgur.com/4CamXKq.png "Bloodfire")
+[![bloodfire](https://i.imgur.com/HVHrF1p.png "bloodfire")](https://sebastianboari.github.io/boariterceraentregajs.github.io/ "bloodfire")
 
 # Bloodfire
 
